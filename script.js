@@ -52,11 +52,11 @@ const computerSelection = getComputerChoice();
 const humanSelection = getHumanChoice();
 
 function playGame(){
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
+    playRound(getHumanChoice(), getComputerChoice());
     return `You Score is ${humanScore} \n Computer Score is ${computerScore}`
 }
 
