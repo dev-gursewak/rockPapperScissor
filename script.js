@@ -57,8 +57,7 @@ document.querySelector(".button").addEventListener('click', (event) => {
     document.querySelector(".Score").textContent = `Your Score: ${humanScore} Computer Score: ${computerScore}`;
 });
 
-//have to stop it after 5 match and print the final score on the screen
+
+//has to display a winner after five rounds.
+//have to stop it after 5 match and print the final score on the screen.
 //give a nice UI to it.
-//
-
-
