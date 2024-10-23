@@ -51,13 +51,23 @@ function playRound(humanChoice, computerChoice){
 const computerSelection = getComputerChoice();
 const humanSelection = getHumanChoice();
 
+document.querySelector("div").addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch (target.id) {
+        case "rock":
+            console.log("rock");
+            break;
+        case "paper":
+            console.log("paper");
+            break;
+        case "scissor":
+            console.log("scissor");
+            break;
+    }
+});
+
 function playGame(){
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    playRound(humanSelection, computerSelection);
-    return `You Score is ${humanScore} \n Computer Score is ${computerScore}`
 }
 
 console.log(playGame())
