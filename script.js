@@ -9,6 +9,7 @@ function getComputerChoice(){
     }
 }
 
+/*
 function getHumanChoice(){
     let humanInput = prompt("input your choice from rock, paper, scissor", "rock");
     humanInput = humanInput.toLowerCase();
@@ -20,7 +21,7 @@ function getHumanChoice(){
             return "WORNG INPUT! Please select from rock, paper and scissor"
     }   
 }
-
+*/
 let humanScore = 0;
 let computerScore = 0;
 
@@ -49,25 +50,15 @@ function playRound(humanChoice, computerChoice){
 }
 
 const computerSelection = getComputerChoice();
-const humanSelection = getHumanChoice();
 
-document.querySelector("div").addEventListener('click', (event) => {
-    let target = event.target;
-
-    switch (target.id) {
-        case "rock":
-            console.log("rock");
-            break;
-        case "paper":
-            console.log("paper");
-            break;
-        case "scissor":
-            console.log("scissor");
-            break;
-    }
+document.querySelector(".button").addEventListener('click', (event) => {
+    let result = playRound(event.target.id, getComputerChoice());
+    document.querySelector(".result").textContent = result;
+    document.querySelector(".Score").textContent = `Your Score: ${humanScore} Computer Score: ${computerScore}`;
 });
 
-function playGame(){
-}
+//have to stop it after 5 match and print the final score on the screen
+//give a nice UI to it.
+//
 
-console.log(playGame())
+
