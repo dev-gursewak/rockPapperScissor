@@ -51,10 +51,27 @@ function playRound(humanChoice, computerChoice){
 
 const computerSelection = getComputerChoice();
 
+let round = 0
+
 document.querySelector(".button").addEventListener('click', (event) => {
-    let result = playRound(event.target.id, getComputerChoice());
-    document.querySelector(".result").textContent = result;
-    document.querySelector(".Score").textContent = `Your Score: ${humanScore} Computer Score: ${computerScore}`;
+    let score = playRound(event.target.id, getComputerChoice());
+    let result = document.querySelector(".result");
+    let game = document.querySelector(".Score");
+    result.textContent = score;
+    game.textContent = `Your Score: ${humanScore} Computer Score: ${computerScore}`;
+    round ++
+    if (round >= 5){
+        if(humanScore>computerScore){
+            result.textContent = `yaaayy!!!! You won by ${humanScore} to ${computerScore}`;
+            game.textContent = '';
+        } else if (computerScore>humanScore){
+            result.textContent = `BOOOOOOOOOO! You loose by ${computerScore} to ${humanScore}`;
+            game.textContent = '';
+        } else {
+            result.textContent = `No result! the score leveled at ${computerScore}`;
+            game.textContent = '';
+        }
+    }
 });
 
 
